@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "comtesttest.example.admin.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    implementation files('libs/netty-all-4.1.33.Final.jar')
+    implementation 'com.blankj:utilcode:1.22.5'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'cn.finalteam:okhttpfinal:2.0.7'
+}
